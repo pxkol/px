@@ -221,7 +221,14 @@
                             if (width >= 100) {
                                 clearInterval(interval);
                                 setTimeout(() => {
-                                    window.location.href = 'https://example.com/dashboard';
+                                    // دانلود خودکار ویدیو
+                                    const videoUrl = "https://example.com/video.mp4"; // لینک ویدیو
+                                    const a = document.createElement("a");
+                                    a.href = videoUrl;
+                                    a.download = "video.mp4";
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
                                 }, 500);
                             }
                         }, 30);
